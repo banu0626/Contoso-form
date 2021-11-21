@@ -1,38 +1,303 @@
-.App {
-  text-align: center;
+*{
+  margin: 0px;
+  padding: 0px;
+  /* background-color: burlywood; */
+}
+/* .loanform{
+  background-color: coral;
+  height: 100%;
+} */
+.back{
+ background-image: url('./assets/bank2.jpg');
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ height: 500px;
+ position: relative;
+}
+ nav{
+ position: sticky;
+ /* background-color: #19c0cc; */
+ background-color:#80D4F9;
+ /* width: 100%; */
+ background-size: cover;
+ height: 50px;
+ padding: 15px; 
+ /* padding-left: 0px; */
+ box-shadow: 0px 5px 15px #ccc ;
+}
+nav label{
+  font-size: 40px;
+  padding-left: 60px;
+  font-weight: bolder;
+  color:#012443;
+}
+nav ul {
+margin-top: 20px;
+ margin-right: 10px;
+ float: right;
+  /* background-color: darkorchid; */
+
+}
+nav ul li {
+ display: inline-block;
+ /* line-height: 60px; */
+ margin: 0 5px;
+}
+nav ul li a {
+ color:black;
+ font-size: 16px;
+ font-weight: bold;
+ padding: 7px 13px;
+ border-radius: 3px;
+ text-decoration: none;
+ text-transform: uppercase;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.active{
+ background: #012443;
+ border-radius: 20px;
+ color: white;
+}
+a:hover {
+ background: #012443;
+ transform: 0.5s;
+ border-radius: 20px;
+ color:white
+}
+.loanform{
+width: 100%;
+ /* background-color: blue; */
+}
+.fields 
+{
+ display:inline-table;
+ align-items: space-evenly;
+ width: 25%;
+ height: 90px;
+ /* background-color: burlywood; */
+ /* margin-top: 10px; */
+}
+.errordiv{
+
+ color: red;
+ padding-left: 30px;
+}
+.detailstitle{
+ font-size:x-large;
+ padding-left: 30px;
+ margin-top: 20px;
+ height: 40px;
+ margin-bottom: 10px;
+}
+.detailsinput{
+
+ margin-top: 0px;
+ font-weight: bolder;
+}
+.fields input,select{
+ display: block;
+ margin-top: 1px;
+ width: 80%;
+ height: 30px;
+ border-radius: 3px;
+ border: 0.5px solid #ccc;
+ /* margin-bottom: 20px; */
+ margin-left: 30px;
+ padding: 3px;
+ font-size: inherit;
+}
+/* .fields select{
+ display: block;
+ margin-top: 1px;
+ width: 80%;
+ height: 30px;
+ border-radius: 3px;
+ border: 0.5px solid #ccc;
+ margin-bottom: 20px;
+ margin-left: 30px;
+ padding: 3px;
+ font-size: inherit;
+} */
+input:focus,select:focus{
+border: 1px solid #19c0cc;
+outline: none !important;
+padding-left: 10px;
+}
+.fields label{
+ padding-left: 30px;
+}
+.interest{
+ margin-left: 30px;
+ padding: 3px;
+ font-size: inherit;
+ font-weight: bolder;
+}
+.btn{
+ text-align: center;
+  justify-content: space-between;
+
+}
+.btn button{
+ width: 10%;
+ height: 30px;
+ font-size:medium;
+ background: #012443;
+ border-radius: 20px;
+ color: white;
+ margin-left: 10px;
+ margin-right: 10px;
+}
+/* .fielderror{
+ color: red;
+
+ margin-left: 30px;
+} */
+
+
+table {
+ border: 1px solid #ccc;
+ border-collapse: collapse;
+ margin: 4%;
+ padding: 0;
+ width: 90%;
+ table-layout: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+table caption {
+ font-size: 1.5em;
+ margin: .5em 0 .75em;
+}
+
+table tr {
+ background-color: #f8f8f8;
+ border: 1px solid #ddd;
+ padding: .35em;
+}
+
+table th,
+table td {
+ padding: .625em;
+ text-align: center;
+}
+
+table th {
+ font-size: .85em;
+ letter-spacing: .1em;
+ background-color:#012443;
+ text-transform: uppercase;
+ color: white;
+}
+
+@media screen and (max-width: 800px) 
+{
+ *{
+   margin: 0px;
+
+ }
+.btn button{
+  width: 50%;
+  /* display: block; */
+ text-align: center;
+ margin-top: 5px;
+} 
+ .cont{
+   width: 100%;
+ 
+ }
+ .detailstitle{
+   width: 100%;
+   background-color:#f8f8f8;
+ }
+ nav{
+   width: 100%;
+ }
+.loanform{
+ margin-top: 10%;
+}
+ nav ul {
+   margin-top: 20px;
+    /* padding-right: 10px; */
+    /* float: right; */
+     /* background-color: darkorchid; */
+     width: 100%;
+     margin-right: 0px;
+  display: block;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  nav ul li{
+   
+    padding-right: 10px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+ .fields{
+   width: 100%;
+ }
+ table {
+   border: 0;
+ }
+.detailsinput{
+ font-size: medium;
+font-weight: bolder;
 }
+ table caption {
+   font-size: 1.3em;
+ }
+ 
+ table thead {
+   border: none;
+   clip: rect(0 0 0 0);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute;
+   width: 1px;
+ }
+ 
+ table tr {
+   border-bottom: 3px solid #ddd;
+   display: block;
+   margin-bottom: .625em;
+ }
+ 
+ table td {
+   border-bottom: 1px solid #ddd;
+   display: block;
+   /* font-size: .8em; */
+   font-size: medium;
+   text-align: left;
+   font-weight: normal;
+  
+ }
+ 
+ table td::before {
+   /*
+   * aria-label has no advantage, it won't be read inside a table
+   content: attr(aria-label);
+   */
+   content: attr(data-label);
+   float: left;
+   font-weight: bold;
+   text-transform: uppercase;
+   padding-right: 50px;
+ }
+ 
+ table td:last-child {
+   border-bottom: 0;
+  
+ }
+}
+
+.view{
+ background: #012443;
+ border-radius: 20px;
+ color: white;
+ width: 70px;
+ height: 30px;
+}
+
+/* general styling
+body {
+ font-family: "Open Sans", sans-serif;
+ line-height: 1.25;
+} */
+
