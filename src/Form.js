@@ -55,15 +55,19 @@ function Form() {
  reset(data);
   }
   const [open, setOpen] = useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  const [saveopen, setSaveopen] = useState(false);
+  // const handleClickOpen = () => {
+  //   setSaveopen(true);
+  // };
   const handleClose = () => {
     setOpen(false);
     history('/List')
   };
 
- 
+  const handleSaveClose=()=>{
+    setSaveopen(false);
+    history('/form')
+  }
 const history=useNavigate();
 
 
@@ -77,16 +81,6 @@ const loan_amount = {...register("loan_amount",
 const [amount, setAmount] = useState();
     
   
-  //  var a=watchloan
-    // if(a<=20000){
-    //   setAmount((a*5*1)/100);
-    // }
-    // if(a>=20001 || a<=100000){
-    //   setAmount((a*rate_for_1L*1)/100)
-    // }
-    // if(a>=100001||a<=2500000){
-    //   setAmount((a*rate_for_25L*1)/100)
-    // }
 
 const handleLoan=(e)=>{
   // console.log(e.target.value)
@@ -169,7 +163,7 @@ const [prevloannumber,setPrevloannumber]= useState([])
     
       
           <div className="fields">
-            <label>Mobile No.</label>
+            <label>Mobile No. *</label>
             <input
             type="text"
             {...register("mobile_no", { required: "Mobile No is Required",
@@ -219,7 +213,7 @@ const [prevloannumber,setPrevloannumber]= useState([])
          </div>
 
          <div className="fields">
-             <label>Email Addres</label>
+             <label>Email Address</label>
              <input
               type="text"
              {...register("email_id", { required:'' ,
@@ -309,7 +303,9 @@ const [prevloannumber,setPrevloannumber]= useState([])
         <div className="btn">
           <button type="reset" onSubmit={handleSubmit(onreset)}>Reset</button>
          
-          <button  type="button"onClick={() => {const values = getValues(); localStorage.setItem("Forms Filled",JSON.stringify(values))} }>Save</button>
+          <button  type="button"onClick={() =>
+           {const values = getValues(); localStorage.setItem("Forms Filled",JSON.stringify(values));setSaveopen(true);}
+         }>Save</button>
           <button type="submit">Submit</button>
         </div>
        
@@ -330,7 +326,7 @@ const [prevloannumber,setPrevloannumber]= useState([])
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-         <p style={{color:'black'}}> Your Loan Application has been Submitted Succussfully.<br/>
+         <p style={{color:'black'}}> Your Loan Application has been Submitted Successfully.<br/>
          <p style={{fontWeight:'bolder',color:'black'}}>{Loan_Number} </p>is your Application Number</p>
           </DialogContentText>
         </DialogContent>
@@ -342,6 +338,34 @@ const [prevloannumber,setPrevloannumber]= useState([])
         </DialogActions>
       </Dialog>
         
+
+
+
+
+ {/* <Button variant="outlined" onClick={handleClickOpen}>
+        Open alert dialog
+      </Button>  */}
+      <Dialog
+        open={saveopen}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+         <p style={{fontWeight:'bolder',color:'black'}}>Details saved Successfully</p>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+
+          <Button onClick={handleSaveClose} autoFocus>
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+
+
       </div> 
      
    </div>

@@ -50,14 +50,15 @@ var history=useNavigate();
         
   <tbody>
     <tr>
-      <td data-label="Loan Number" style={{fontWeight:"bolder"}}>{e.details.Loan_no}</td>
-      <td data-label="Applicant Name" style={{fontWeight:"normal"}}>{e.details.data.name}</td>
-      <td data-label="Loan Amount">{e.details.data.loan_amount}</td>
-      <td data-label="Interest(P.A)">{e.details.Interest}</td>
-      <td data-label="Mobile No">{e.details.data.mobile_no}</td>
+      <td data-label="Loan Number" style={{fontWeight:"bolder"}} ><p id="left">{e.details.Loan_no}</p></td>
+      <td data-label="Applicant Name" style={{fontWeight:"normal"}}><p id="left">{e.details.data.name}</p></td>
+      <td data-label="Loan Amount"><p id="left">{e.details.data.loan_amount}</p></td>
+      <td data-label="Interest(P.A)"><p id="left">{e.details.Interest}</p></td>
+      <td data-label="Mobile No"><p id="left">{e.details.data.mobile_no}</p></td>
       <td><button className="view" onClick={()=>{history('/view',{state:e,replace:true})}}>View</button></td>
     </tr>
   </tbody>
+
 
         
         

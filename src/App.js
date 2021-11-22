@@ -12,7 +12,7 @@ import View from './View';
 import Home from './Home';
 
 function App() {
-  // const user= localStorage.getItem("user");
+
 
   return (
    <Router>
