@@ -68,9 +68,9 @@ const history=useNavigate();
 
 
 const loan_amount = {...register("loan_amount",
-{ required: "Loan Amount is Required"
+{ required: "Loan Amount is Required",
 //  pattern:{
-//   value:/^[1-9]{5,7}$/,message:"Not Valid"}
+//   value:/^[1-9]$/,message:"Not Valid"}
  }
 )};
 
@@ -97,7 +97,7 @@ const handleLoan=(e)=>{
      if(s>=20001 && s<=100000){
          setAmount((s*6.5*1)/100)
        }
-       if(s>=100001 && s<=2500000){
+       if(s>=100001 && s<=9999999){
          setAmount((s*8*1)/100)
        }
 }
@@ -278,6 +278,8 @@ const [prevloannumber,setPrevloannumber]= useState([])
                 <label>Expected Loan Amount *</label>
                 <input
                 type="text"
+                maxLength="7"
+            
                 {...loan_amount}
               onChange={handleLoan}
                 />

@@ -11,7 +11,7 @@ function List() {
     display()
    },[])
   const display =async () =>{
-    const res = await axios.get("http://localhost:9000/alllist");
+    const res = await axios.get("http://localhost:9099/alllist");
     console.log(res.data);
     setApplist(res.data)
 }
